@@ -2,9 +2,9 @@
 
 ### Index
 
-* [Remove a SSID from the preferred wireless network list](https://github.com/erikberglund/macOSSwift/blob/master/macOSSwift_Networking-WiFi.md#remove-a-ssid-from-the-preferred-wireless-network-list)
+* [Remove an SSID from the preferred wireless network list](https://github.com/erikberglund/macOSSwift/blob/master/macOSSwift_Networking-WiFi.md#remove-an-ssid-from-the-preferred-wireless-network-list)
 
-## Remove a SSID from the preferred wireless network list
+## Remove an SSID from the preferred wireless network list
 
 ```swift
 import CoreWLAN
