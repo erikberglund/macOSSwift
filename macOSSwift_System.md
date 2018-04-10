@@ -31,7 +31,7 @@ This function will return the currently installed RAM in bytes.
 ```swift
 func physicalMemory() -> Int64 {
     
-    var mib: [Int32] = [ CTL_HW, HW_MEMSIZE ]
+    var mib = [ CTL_HW, HW_MEMSIZE ]
     var physicalMemory: Int64 = 0
     var physicalMemorySize = MemoryLayout<Int64>.stride
     
