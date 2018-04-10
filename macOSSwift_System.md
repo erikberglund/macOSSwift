@@ -17,7 +17,7 @@ func kernelBootTime() -> Date {
     var bootTimeSize = MemoryLayout<timeval>.stride
     
     if 0 != sysctl(&mib, UInt32(mib.count), &bootTime, &bootTimeSize, nil, 0) {
-        fatalError("Could not get boot time, errno: \(errno)")
+        fatalError("sysctl error: Could not get KERN_BOOTTIME, errno: \(errno)")
     }
     
     return Date(timeIntervalSince1970: TimeInterval(bootTime.tv_sec))
@@ -36,7 +36,7 @@ func physicalMemory() -> Int64 {
     var physicalMemorySize = MemoryLayout<Int64>.stride
     
     if 0 != sysctl(&mib, UInt32(mib.count), &physicalMemory, &physicalMemorySize, nil, 0) {
-        fatalError("Could not get boot time, errno: \(errno)")
+        fatalError("sysctl error: Could not get HW_MEMSIZE, errno: \(errno)")
     }
     
     return physicalMemory
