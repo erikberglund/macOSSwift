@@ -6,7 +6,7 @@
 
 ## Login Time
 
-This function will return the last Date and time the passed usernamed logged in.  
+This function will return the last date and time the passed usernamed logged in.  
 We're using the wtmp-database, so the data will rotate after some time.
 
 ```swift
