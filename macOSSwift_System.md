@@ -14,7 +14,7 @@ func kernelBootTime() -> Date {
     
     var mib = [ CTL_KERN, KERN_BOOTTIME ]
     var bootTime = timeval()
-    var bootTimeSize = MemoryLayout<timeval>.size
+    var bootTimeSize = MemoryLayout<timeval>.stride
     
     if 0 != sysctl(&mib, UInt32(mib.count), &bootTime, &bootTimeSize, nil, 0) {
         fatalError("Could not get boot time, errno: \(errno)")
