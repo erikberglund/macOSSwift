@@ -2,9 +2,9 @@
 
 ### Index
 
-* [LoginTime](https://github.com/erikberglund/macOSSwift/blob/master/macOSSwift_User.md#login-time)
+* [Login Date and Time](https://github.com/erikberglund/macOSSwift/blob/master/macOSSwift_User.md#login-date-and-time)
 
-## Login Time
+## Login Date and Time
 
 This function will return the last date and time the passed usernamed logged in.  
 We're using the wtmp-database, so the data will rotate after some time.
