@@ -3,6 +3,7 @@
 ### Index
 
 * [Boot Time](https://github.com/erikberglund/macOSSwift/blob/master/macOSSwift_System.md#boot-time)
+* [RAM Installed]()
 
 ## Boot Time
 
@@ -20,5 +21,24 @@ func kernelBootTime() -> Date {
     }
     
     return Date(timeIntervalSince1970: TimeInterval(bootTime.tv_sec))
+}
+```
+
+## RAM Installed
+
+This function will return the currently installed RAM in bytes.
+
+```swift
+func physicalMemory() -> Int64 {
+    
+    var mib: [Int32] = [ CTL_HW, HW_MEMSIZE ]
+    var physicalMemory: Int64 = 0
+    var physicalMemorySize = MemoryLayout<Int64>.stride
+    
+    if 0 != sysctl(&mib, UInt32(mib.count), &physicalMemory, &physicalMemorySize, nil, 0) {
+        fatalError("Could not get boot time, errno: \(errno)")
+    }
+    
+    return physicalMemory
 }
 ```
