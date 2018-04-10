@@ -4,7 +4,7 @@
 
 * [Boot Time](https://github.com/erikberglund/macOSSwift/blob/master/macOSSwift_System.md#boot-time)
 
-## Login Time
+## Boot Time
 
 This function will return the kernel (system) boot date and time.
 
