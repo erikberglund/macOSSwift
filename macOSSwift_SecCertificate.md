@@ -2,7 +2,7 @@
 
 ### Index
 
-* [isValid](https://github.com/erikberglund/macOSSwift/blob/master/macOSSwift_SecCertificate.md#isValid)
+* [isValid](https://github.com/erikberglund/macOSSwift/blob/master/macOSSwift_SecCertificate.md#isvalid)
 
 ## isValid
 
