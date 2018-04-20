@@ -11,6 +11,7 @@ This extension will return if the SecCertificate is self signed.
 
 ```swift
 extension SecCertificate {
+
     var isSelfSigned: Bool {
         if #available(OSX 10.12.4, *) {
             return SecCertificateCopyNormalizedIssuerSequence(self) == SecCertificateCopyNormalizedSubjectSequence(self)
@@ -42,6 +43,7 @@ This extension will return if the SecCertificate is valid for the current date.
 
 ```swift
 extension SecCertificate {
+
     var isValid: Bool {
         let oids: [CFString] = [kSecOIDX509V1ValidityNotAfter, kSecOIDX509V1ValidityNotBefore]
         let certificateValueDict = SecCertificateCopyValues(self, oids as CFArray, nil) as? Dictionary<String, Dictionary<String, Any>>
