@@ -2,7 +2,39 @@
 
 ### Index
 
+* [isSelfSigned](https://github.com/erikberglund/macOSSwift/blob/master/macOSSwift_SecCertificate.md#isselfsigned)
 * [isValid](https://github.com/erikberglund/macOSSwift/blob/master/macOSSwift_SecCertificate.md#isvalid)
+
+## isSelfSigned
+
+This extension will return if the SecCertificate is self signed.
+
+```swift
+extension SecCertificate {
+    var isSelfSigned: Bool {
+        if #available(OSX 10.12.4, *) {
+            return SecCertificateCopyNormalizedIssuerSequence(self) == SecCertificateCopyNormalizedSubjectSequence(self)
+        } else {
+            var errorRef : Unmanaged<CFError>?
+            let issuerData = SecCertificateCopyNormalizedIssuerContent(self, &errorRef)
+            let issuerDataError = errorRef?.takeRetainedValue()
+            
+            if issuerData == nil {
+                Swift.print("Failed to get issuer data with error: \(String(describing: issuerDataError))")
+            }
+            
+            let subjectData = SecCertificateCopyNormalizedSubjectContent(self, &errorRef)
+            let subjectDataError = errorRef?.takeRetainedValue()
+            
+            if subjectData == nil {
+                Swift.print("Failed to get subject data with error: \(String(describing: subjectDataError))")
+            }
+            
+            return issuerData == subjectData
+        }
+    }
+}
+```
 
 ## isValid
 
