@@ -2,7 +2,8 @@
 
 ### Index
 
-* [Initialize a OperatingSystemVersion instance using a version string (10.13.6)](https://github.com/erikberglund/macOSSwift/blob/master/macOSSwift_OperatingSystemVersion.md#remove-an-ssid-from-the-preferred-wireless-network-list)
+* [Initialize OperatingSystemVersion using a version string like "10.13.6"](https://github.com/erikberglund/macOSSwift/blob/master/macOSSwift_OperatingSystemVersion.md#initialize-operatingsystemversion-using-a-version-string-like-10136)
+* [Check if two OperatingSystemVersion are equal](https://github.com/erikberglund/macOSSwift/blob/master/macOSSwift_OperatingSystemVersion.md#check-if-two-operatingsystemversion-are-equal)
 
 ## Initialize OperatingSystemVersion using a version string like "10.13.6"
 
