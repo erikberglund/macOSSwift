@@ -4,7 +4,7 @@
 
 * [Initialize a OperatingSystemVersion instance using a version string (10.13.6)](https://github.com/erikberglund/macOSSwift/blob/master/macOSSwift_OperatingSystemVersion.md#remove-an-ssid-from-the-preferred-wireless-network-list)
 
-## Initialize a OperatingSystemVersion instance using a version string (10.13.6)
+## Initialize OperatingSystemVersion using a version string like "10.13.6"
 
 ```swift
 extension OperatingSystemVersion {
@@ -34,5 +34,16 @@ extension OperatingSystemVersion {
         self.init(majorVersion: majorVersion, minorVersion: minorVersion, patchVersion: patchVersion)
     }
 }
-
 ```
+
+## Check if two OperatingSystemVersion are equal
+
+```swift
+extension OperatingSystemVersion {
+    static func == (lhs: OperatingSystemVersion, rhs: OperatingSystemVersion) -> Bool {
+        return
+            lhs.majorVersion == rhs.majorVersion &&
+            lhs.minorVersion == rhs.minorVersion &&
+            lhs.patchVersion == rhs.patchVersion
+        }
+}
