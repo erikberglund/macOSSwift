@@ -10,25 +10,19 @@
 extension OperatingSystemVersion {
     init?(versionString: String) {
         let versionStringArray = versionString.components(separatedBy: ".")
-        if versionStringArray.count < 1 { return nil }
+
         guard let majorVersion = Int(versionStringArray[0]) else { return nil }
-        
-		var minorVersion = 0
+
+        var minorVersion = 0
         if 1 < versionStringArray.count {
-            if let minorVersionInt = Int(versionStringArray[1]) {
-                minorVersion = minorVersionInt
-            } else {
-                return nil
-            }
+            guard let minorVersionInt = Int(versionStringArray[1]) else { return nil }
+            minorVersion = minorVersionInt
         }
-        
+
         var patchVersion = 0
         if 2 < versionStringArray.count {
-            if let patchVersionInt = Int(versionStringArray[2]) {
-                patchVersion = patchVersionInt
-            } else {
-                return nil
-            }
+            guard let patchVersionInt = Int(versionStringArray[2]) else { return nil }
+            patchVersion = patchVersionInt
         }
 
         self.init(majorVersion: majorVersion, minorVersion: minorVersion, patchVersion: patchVersion)
