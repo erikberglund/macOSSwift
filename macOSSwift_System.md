@@ -21,7 +21,7 @@ var kernelBootTime: Date? {
     
     if 0 != Darwin.sysctl(&mib, UInt32(mib.count), &bootTime, &bootTimeSize, nil, 0) {
         Swift.print("sysctl error: Could not get HW_MEMSIZE, errno: \(errno)")
-		return nil
+        return nil
     }
     
     return Date(timeIntervalSince1970: TimeInterval(bootTime.tv_sec))
@@ -39,13 +39,13 @@ var hardwareModel: String? {
     var count = 0
     
     guard 0 == Darwin.sysctl(&mib, 2, nil, &count, nil, 0) else {
-		Swift.print("sysctl error: Could not get HW_MODEL size, errno: \(errno)")
+        Swift.print("sysctl error: Could not get HW_MODEL size, errno: \(errno)")
         return nil
     }
     
     var hardwareModel = [CChar](repeating: 0, count: count)
     guard 0 == Darwin.sysctl(&mib, 2, &hardwareModel, &size, nil, 0) else {
-		Swift.print("sysctl error: Could not get HW_MODEL, errno: \(errno)")
+        Swift.print("sysctl error: Could not get HW_MODEL, errno: \(errno)")
         return nil
     }
     
@@ -66,7 +66,7 @@ var physicalMemory: Int64? {
     
     if 0 != Darwin.sysctl(&mib, UInt32(mib.count), &physicalMemory, &physicalMemorySize, nil, 0) {
         Swift.print("sysctl error: Could not get HW_MEMSIZE, errno: \(errno)")
-		return nil
+        return nil
     }
     
     return physicalMemory
