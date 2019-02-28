@@ -3,6 +3,8 @@
 ### Index
 
 * [Boot Time](https://github.com/erikberglund/macOSSwift/blob/master/macOSSwift_System.md#boot-time)
+* [OS Version](https://github.com/erikberglund/macOSSwift/blob/master/macOSSwift_System.md#os-version)
+* [OS Build Version](https://github.com/erikberglund/macOSSwift/blob/master/macOSSwift_System.md#os-build-version)
 
 ## Boot Time
 
@@ -22,4 +24,27 @@ var kernelBootTime: Date? {
     
     return Date(timeIntervalSince1970: TimeInterval(bootTime.tv_sec))
 }
-````
+```
+
+## OS Version
+
+This function will return the operating system version of the running system as a string.
+
+```
+var osVersion: String {
+    let osVersion = ProcessInfo().operatingSystemVersion
+    return String(osVersion.majorVersion) + "." + String(osVersion.minorVersion) + "." + String(osVersion.patchVersion)
+}
+```
+
+## OS Build Version
+
+This function will return the operating system build version of the running system.
+
+```swift
+var osBuildVersion: String? {
+    let root = IORegistryGetRootEntry(kIOMasterPortDefault)
+    guard let osBuildVersion = IORegistryEntryCreateCFProperty(root, kOSBuildVersionKey as CFString, kCFAllocatorDefault, 0)?.takeUnretainedValue() as? String else { return nil }
+    return osBuildVersion
+}
+```
