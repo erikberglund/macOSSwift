@@ -40,5 +40,9 @@ extension OperatingSystemVersion {
             lhs.majorVersion == rhs.majorVersion &&
             lhs.minorVersion == rhs.minorVersion &&
             lhs.patchVersion == rhs.patchVersion
-        }
+    }
+        
+    static func != (lhs: OperatingSystemVersion, rhs: OperatingSystemVersion) -> Bool {
+        return !(lhs == rhs)
+    }
 }
