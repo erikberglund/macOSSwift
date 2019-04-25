@@ -10,7 +10,7 @@
 
 Using `IORegistryEntryCreateCFProperty`
 
-```
+```swift
 extension OperatingSystemVersion {
     public var buildVersion: String? {
         get {
