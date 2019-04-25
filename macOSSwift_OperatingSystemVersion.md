@@ -2,8 +2,8 @@
 
 ### Index
 
+* [init(versionString:)](https://github.com/erikberglund/macOSSwift/blob/master/macOSSwift_OperatingSystemVersion.md#initversionstring)
 * [buildVersion](https://github.com/erikberglund/macOSSwift/blob/master/macOSSwift_OperatingSystemVersion.md#buildversion)
-* [init(versionString:)](https://github.com/erikberglund/macOSSwift/blob/master/macOSSwift_OperatingSystemVersion.md#initialize-operatingsystemversion-using-a-version-string-like-10136)
 * [Equatable](https://github.com/erikberglund/macOSSwift/blob/master/macOSSwift_OperatingSystemVersion.md#equatable)
 
 ## init(versionString:)
