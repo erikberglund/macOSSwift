@@ -8,7 +8,7 @@
 
 ## init(versionString:)
 
-Initialize OperatingSystemVersion using a version string like "10.13.6"
+Initialize using a version string like "10.13.6"
 
 From [Foundation/ProcessInfo](https://github.com/apple/swift-corelibs-foundation/blob/5ffa3c88dcfdc3db73a7fcd7f1ca27611f59a0ef/Foundation/ProcessInfo.swift#L142-L146)
 
@@ -26,7 +26,7 @@ extension OperatingSystemVersion {
 
 ## buildVersion
 
-Using `IORegistryEntryCreateCFProperty`
+Return build version using `IORegistryEntryCreateCFProperty`.
 
 ```swift
 extension OperatingSystemVersion {
@@ -40,7 +40,7 @@ extension OperatingSystemVersion {
 }
 ```
 
-Using `sysctlbyname`
+Return build version using `sysctlbyname`.
 
 ```swift
 extension OperatingSystemVersion {
@@ -63,7 +63,7 @@ extension OperatingSystemVersion {
 
 ## Equatable
 
-Conform OperatingSystemVersion to the Equatable protocol
+Conform to the Equatable protocol.
 
 ```swift
 extension OperatingSystemVersion: Equatable {
