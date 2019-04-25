@@ -44,7 +44,7 @@ This function will return the operating system build version of the running syst
 ```swift
 var osBuildVersion: String? {
     let root = IORegistryGetRootEntry(kIOMasterPortDefault)
-    guard let osBuildVersion = IORegistryEntryCreateCFProperty(root, kOSBuildVersionKey as CFString, kCFAllocatorDefault, 0)?.takeUnretainedValue() as? String else { return nil }
+    guard let osBuildVersion = IORegistryEntryCreateCFProperty(root, kOSBuildVersionKey as CFString, kCFAllocatorDefault, 0)?.takeRetainedValue() as? String else { return nil }
     return osBuildVersion
 }
 ```
